@@ -1,0 +1,50 @@
+<div *ngIf="page0" class="container">
+    <br><hr><br>
+  <h1 align="center">Login Page</h1>
+  <br><hr><br>
+  <!-- <p [appAppBetterHighlight]="'red'" defaultColor="yellow">Style me with a better directive!</p> -->
+  <table align="center" border="0">
+    <tr>
+      <td>Username :</td>
+      <td><input type="text" id="uname" value="" [(ngModel)]="username" /></td>
+    </tr>
+    <tr>
+      <td>Password :</td>
+      <td><input type="password" id="passwd" value="" [(ngModel)]="password" /></td>
+    </tr>
+  </table>
+  <br>
+  <div align="center" >
+    <input type="button" class="btn btn-primary" id="submit" value="Submit" (click)="validate()" />
+    <br><br>
+    {{ valid }}
+  </div>
+  <br>
+</div>
+
+<div *ngIf="page1" class="container">
+  <div align="center">
+    <input type="button" class="btn btn-primary" id="submit" value="Show User Details" (click)="enablepage2()" />
+  </div>
+  <br><hr><br>
+</div>
+
+
+
+<div *ngIf="page2" class="container">
+  <!-- <p appBasicHighlight appBasicText>Style me with basic directive</p> -->
+  <br><hr><br>
+  <app-userdetails></app-userdetails>
+  <br><br>
+  <div align="center">
+    <input type="button" class="btn btn-primary" id="submit" value="Show Images" (click)="enablepage3()" />
+  </div>
+  <br><hr><br>
+</div>
+
+<div *ngIf="page3" class="container">
+  <!-- <p appBasicHighlight>Style me with basic directive</p> -->
+  <br><hr><br>
+  <app-imagedetails></app-imagedetails>
+  <br><hr><br>
+</div>
